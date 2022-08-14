@@ -1,0 +1,82 @@
+{% extends "layout2.html" %}
+{% block content %}
+
+
+    <img src="../static/images/c-logo.png" style="width: 35%; height: 35%" alt="cakahal" class="logo mb-xxl-4">
+
+
+
+
+<!--FORM SECTION STARTS HERE-->
+<div class="container pt-0">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+            <div class="section-title mb-5">
+                <strong class="subtitle" data-aos="fade-up" data-aos-delay="0">Rate Us!</strong>
+                <h2 class="heading" data-aos="fade-up" data-aos-delay="100">Let's have a talk</h2>
+            </div>
+
+            {% if message %}
+            <p class="message text-danger">{{ message | safe }}</p>
+            {% endif %}
+
+            <form action="/submit" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group mb-3">
+                            <label class="text-black" for="customer">Company name/ Username</label>
+                            <input type="text" name="customer" class="form-control" id="customer">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group mb-3">
+                            <label class="text-black" for="email">Email</label>
+                            <input type="email" name="email" class="form-control" id="email">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label class="text-muted" for="">Application Type</label>
+                    <select class="form-control" name="cat" id="">
+                        <option value="" class="text-muted">Select Application</option>
+                        <option value="Front-End">Front-End</option>
+                        <option value="Back-End">Back-End</option>
+                        <option value="Android & iOS">Android & iOS</option>
+                        <option value="Tutorials">Tutorials</option>
+                        <option value="Graphic Designs">Graphic Designs</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-black" for="">Please rate your Service</label>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="radio" name="rating" value="1" /> 1
+                        <input type="radio" name="rating" value="2" /> 2
+                        <input type="radio" name="rating" value="3" /> 3
+                        <input type="radio" name="rating" value="4" /> 4
+                        <input type="radio" name="rating" value="5" /> 5
+                        <input type="radio" name="rating" value="6" /> 6
+                        <input type="radio" name="rating" value="7" /> 7
+                        <input type="radio" name="rating" value="8" /> 8
+                        <input type="radio" name="rating" value="9" /> 9
+                        <input type="radio" name="rating" value="10" checked /> 10
+                    </div>
+
+                <div class="form-group mb-3">
+                    <label class="text-black" for="message">Message</label>
+                    <textarea name="comments" placeholder="Tell us what you like and/or did not like..." class="form-control" id="message" cols="30" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--FORM SECTION STARTS HERE-->
+
+
+{% endblock content %}
